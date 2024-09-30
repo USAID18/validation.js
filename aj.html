@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="sumbit.js"></script>
+</head>
+<script>
+function validate(){
+
+    var x =document.forms["myform"]["abname"].value;
+    var email =document.forms["myform"]["email"].value;
+    var password =document.forms["myform"]["password"].value;
+    if(x==""){
+document.write("enter name please")
+    }
+    else if(email==""){
+        document.write("enter the email")
+    }
+    else if(password=="")
+    {
+        document.write("enter the password")
+    }
+}
+
+</script><body>
+  
+<form name="myform" onsubmit="validate()">
+mame:<input name="abname"><br>
+email <input id="email" type="email" name="email">
+password: <input id="password" type="password" name="password">
+<input type="submit"
+value="click me">
+
+</form>
+
+
+</body>
+</html>

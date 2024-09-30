@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="sumbit.js"></script>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<form name="myform" onsubmit="return validate()">
+    Name: <input name="abname"><br>
+    Email: <input id="email" type="email" name="email"><br>
+    Password: <input id="password" type="password" name="password"><br>
+    <input type="submit" value="Click me">
+</form>
+
+<div id="errorMessages" class="error"></div>
+
+<script>
+function validate() {
+    // Clear previous error messages
+    document.getElementById("errorMessages").innerHTML = "";
+
+    var x = document.forms["myform"]["abname"].value;
+    var email = document.forms["myform"]["email"].value;
+    var password = document.forms["myform"]["password"].value;
+    var messages = [];
+
+    if (x == "") {
+        messages.push("Enter name please.");
+    }
+    if (email == "") {
+        messages.push("Enter email.");
+    }
+    if (password == "") {
+        messages.push("Enter the password.");
+    }
+
+    // If there are error messages, display them
+    if (messages.length > 0) {
+        document.getElementById("errorMessages").innerHTML = messages.join("<br>");
+        return false; // Prevent form submission
+    }
+
+    return true; // Allow form submission if no errors
+}
+</script>
+
+</body>
+</html>
